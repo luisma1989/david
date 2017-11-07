@@ -1,0 +1,342 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+@mixin hide-text {
+  font: 0/0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin content {
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media only screen and (max-width: 640px) {
+    padding:0 20px;
+  }
+}
+
+@mixin contentRow{
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin row {
+  align-self: flex-start;
+  flex:1 45%;
+}
+
+@mixin contentImage {
+  display:block;
+  background-repeat: no-repeat;
+}
+
+@mixin productStyleBase{
+  margin-bottom: 40px;
+  .__contentRow{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .__row{
+    align-self: flex-start;
+    flex:1 45%;
+    &:first-child{
+      border-top-width: 10px;
+      border-top-style: solid;
+      padding-top:40px;
+    }
+  }
+  @media only screen and (max-width: 460px) {
+    margin-bottom: 10px;
+  }
+}
+
+
+// FONTS
+// --------------------------------------------------
+
+@mixin font-family-serif() {
+  font-family: $serifFontFamily;
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Single Corner Border Radius
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+      -moz-border-radius-topleft: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+      -moz-border-radius-topright: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+      -moz-border-radius-bottomright: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+      -moz-border-radius-bottomleft: $radius;
+          border-bottom-left-radius: $radius;
+}
+// for animations
+@mixin animations($duration, $animation) {
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: $animation;
+  -moz-animation-name: $animation;
+  animation-name: $animation;
+}
+
+// Single Side Border Radius
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+// Transitions
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+     -moz-transition-delay: $transition-delay;
+       -o-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+     -moz-transition-duration: $transition-duration;
+       -o-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+
+@mixin transition-ease-in-out($transition-duration){
+  -webkit-transition: -webkit-transform $transition-duration ease-in-out;
+  -moz-transition: -moz-transform $transition-duration ease-in-out;
+  -webkit-transition: -webkit-transform $transition-duration ease-in-out;
+  -o-transition: -o-transform $transition-duration ease-in-out;
+  transition: transform $transition-duration ease-in-out;
+}
+
+// Transformations
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+@mixin skew($x, $y) {
+  -webkit-transform: skew($x, $y);
+     -moz-transform: skew($x, $y);
+      -ms-transform: skewX($x) skewY($y); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew($x, $y);
+          transform: skew($x, $y);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+     -moz-transform: translate3d($x, $y, $z);
+       -o-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+
+// EXAMPLE  transform-transition ===>transition: transform 0.55s, left 0.5s ease;
+@mixin transform-transition($t1, $t2, $prop) {
+  -moz-transition: -moz-transform $t1, $prop $t2 ease;
+  -o-transition: -o-transform $t1, $prop $t2 ease;
+  -webkit-transition: -webkit-transform $t1, $prop $t2 ease;
+  transition: transform $t1, $prop $t2 ease;
+}
+
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+@mixin backface-visibility($visibility){
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+          backface-visibility: $visibility;
+}
+
+// Background clipping
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+}
+
+// Background sizing
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// User select
+// For selecting text on the page
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+       -o-user-select: $select;
+          user-select: $select;
+}
+
+// Resize anything
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//text-ellipsis
+@mixin textEllipsis($width){
+  width: $width;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+//clear:both after
+@mixin clear-both{
+  &:after{
+    content: "";display: block;
+    clear: both;visibility: hidden;
+    height: 0;
+  }
+}
+
+@mixin center{
+  display:block;
+  margin:0 auto;
+  text-align:center;
+}
+@mixin noSelect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin font-size($px) {
+font-size: #{$px}px;
+font-size: #{$px / 10}rem;
+}
+
+@mixin line-height($px) {
+  line-height: #{$px}px;
+  line-height: #{$px / 10}rem;
+}
+
+@mixin background($color, $url) {
+    background: $color url($url+'?v='+unique_id());
+}

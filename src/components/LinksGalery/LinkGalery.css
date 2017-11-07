@@ -1,0 +1,50 @@
+.links-galery {
+  margin: -180px auto 0;
+  padding: 40px 150px;
+  display: flex;
+  flex-flow: row wrap; }
+  .links-galery .section-header {
+    font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+    font-size: 176px;
+    font-weight: 700;
+    text-align: left;
+    z-index: 10;
+    position: relative;
+    line-height: 0.6em;
+    pointer-events: none;
+    flex: 1 100%; }
+  .links-galery .link {
+    flex: 1 50%;
+    text-align: left;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    min-height: 445px;
+    position: relative;
+    overflow: hidden; }
+    .links-galery .link h3 {
+      min-height: 2em;
+      margin-bottom: 1em;
+      font-family: 'Josefin Slab', serif;
+      font-weight: 100;
+      font-size: 50px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: translateZ(0);
+      position: relative;
+      z-index: 10; }
+    .links-galery .link p {
+      max-width: 50%;
+      font-size: 14px;
+      line-height: 1.9em;
+      position: relative;
+      z-index: 10;
+      padding-top: 1em;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: translateZ(0);
+      font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif; }
+  .links-galery .left {
+    background-color: #35936c;
+    color: #fff; }
+  .links-galery .rigth {
+    background-color: #e9c3b8; }

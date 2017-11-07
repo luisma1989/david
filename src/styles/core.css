@@ -1,0 +1,60 @@
+/*
+Application Settings Go Here
+------------------------------------
+This file acts as a bundler for all variables/mixins/themes, so they
+can easily be swapped out without `core.scss` ever having to know.
+
+For example:
+
+@import './variables/colors';
+@import './variables/components';
+@import './themes/default';
+*/
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px; }
+
+/*---------------------------------------
+ COMMON STYLES
+-----------------------------------------*/
+.section_title {
+  padding-top: 90px; }
+
+.section_title h2 {
+  text-transform: uppercase;
+  position: relative;
+  color: #333;
+  font-size: 30px;
+  font-weight: 400; }
+
+.section_title h2:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 60px;
+  height: 1px;
+  background-color: #f39c12;
+  left: 0%; }
+
+.section_title p {
+  text-align: center;
+  margin-top: 45px;
+  color: #333;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300; }
+
+.parallax {
+  background-attachment: fixed !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
