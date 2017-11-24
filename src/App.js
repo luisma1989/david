@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import IntlProvider from './Intl/IntlWrapper'
+
 import Header from './components/Header'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -10,38 +14,49 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './styles/core.css'
 
-// Data
-import headerData from './data/header.json'
 import aboutData from './data/about.json'
 import sentenceData from './data/sentence.json'
 import secondSentenceData from './data/secondSentence.json'
 import experienceData from './data/experience.json'
-import linksGaleryData from './data/linksGalery.json'
 
-class App extends React.Component {
+class App extends Component {
   render () {
     return (
-      <Router>
+      <IntlProvider>
         <div>
-          <Switch>
-            <Route exact path="/" render={() => {
-              return (
-                <div>
-                  <Header headerData={headerData} />
-                  <Experience experienceData={experienceData} />
-                  <About aboutData={aboutData} />
-                  <Sentence sentenceData={sentenceData} />
-                  <Social />
-                  <SecondSentence secondSentenceData={secondSentenceData} />
-                  <LinksGalery linksGaleryData={linksGaleryData} />
-                </div>
-              )}}
-            />
-          </Switch>
+          <Router>
+            <Switch>
+              <Route exact path="/" render={() => {
+                return (
+                  <div>
+                    <Header headerData={this.props.intl.messages} />
+                    <Experience experienceData={experienceData} />
+                    <About aboutData={aboutData} />
+                    <Sentence sentenceData={sentenceData} />
+                    <Social />
+                    <SecondSentence secondSentenceData={secondSentenceData} />
+                    <LinksGalery linksGaleryData={this.props.intl.messages.linksGalery} />
+                  </div>
+                )}}
+              />
+            </Switch>
+          </Router>
         </div>
-      </Router>
+      </IntlProvider>
     )
   }
 }
 
-export default App
+App.propTypes = {
+  intl: PropTypes.object.isRequired
+}
+
+// Retrieve data from store as props
+function mapStateToProps(store) {
+  debugger
+  return {
+    intl: store.intl
+  }
+}
+
+export default connect(mapStateToProps)(App)
