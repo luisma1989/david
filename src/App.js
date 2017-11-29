@@ -39,6 +39,14 @@ class App extends Component {
                   </div>
                 )}}
               />
+              <Route path='/events' render={() => {
+                return (<About />)
+              }}
+              />
+              <Route path='/plates' render={() => {
+                return (<About />)
+              }}
+              />
             </Switch>
           </Router>
         </div>
@@ -53,7 +61,6 @@ App.propTypes = {
 
 // Retrieve data from store as props
 function mapStateToProps(store) {
-  debugger
   return {
     intl: store.intl
   }
