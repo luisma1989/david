@@ -13,15 +13,15 @@ class About extends React.Component {
     const { aboutData } = this.props
 
     return (
-      <article className="about page">
-        <div className="row_about wow fadeInRight">
-          <div className="info">
-            <h2 className="smalltitle">{aboutData.title}</h2>
-            <p className="p4">{aboutData.text}</p>
+      <article className='about page'>
+        <div className='row_about'>
+          <div className='info'>
+            <h2 className='smalltitle'>{aboutData.title}</h2>
+            <p className='p4 wow zoomIn'>{aboutData.text}</p>
           </div>
         </div>
-        <div className="row_about">
-          <div className="__contentImage"></div>
+        <div className='row_about'>
+          <div className='__contentImage'></div>
         </div>
       </article>
     )

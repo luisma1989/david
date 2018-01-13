@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import IntlProvider from './Intl/IntlWrapper'
+import IntlWrapper from './Intl/IntlWrapper'
 
 import Header from './components/Header'
 import About from './components/About'
@@ -9,38 +9,37 @@ import Experience from './components/Experience'
 import Sentence from './components/Sentence'
 import Social from './components/Social'
 import LinksGalery from './components/LinksGalery'
+
 import SecondSentence from './components/SecondSentence'
+import Galery from './components/Galery'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './styles/core.css'
 
-import aboutData from './data/about.json'
-import sentenceData from './data/sentence.json'
-import secondSentenceData from './data/secondSentence.json'
-import experienceData from './data/experience.json'
-
 class App extends Component {
   render () {
     return (
-      <IntlProvider>
+      <IntlWrapper>
         <div>
           <Router>
             <Switch>
               <Route exact path="/" render={() => {
                 return (
                   <div>
-                    <Header headerData={this.props.intl.messages} />
-                    <Experience experienceData={experienceData} />
-                    <About aboutData={aboutData} />
-                    <Sentence sentenceData={sentenceData} />
+                    <Header 
+                      headerData={this.props.intl.messages.header} 
+                      intl={this.props.intl} />
+                    <Experience experienceData={this.props.intl.messages.experience} />
+                    <About aboutData={this.props.intl.messages.about} />
+                    <Sentence sentenceData={this.props.intl.messages.sentence} />
                     <Social />
-                    <SecondSentence secondSentenceData={secondSentenceData} />
+                    <SecondSentence secondSentenceData={this.props.intl.messages.secondSentence} />
                     <LinksGalery linksGaleryData={this.props.intl.messages.linksGalery} />
                   </div>
                 )}}
               />
               <Route path='/events' render={() => {
-                return (<About />)
+                return (<Galery />)
               }}
               />
               <Route path='/plates' render={() => {
@@ -50,7 +49,7 @@ class App extends Component {
             </Switch>
           </Router>
         </div>
-      </IntlProvider>
+      </IntlWrapper>
     )
   }
 }
