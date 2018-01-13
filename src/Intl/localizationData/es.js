@@ -8,11 +8,11 @@ import sentence from './ES/sentence'
 export default {
   locale: 'es',
   messages: {
-    ...about,
-    ...experience,
-    ...header,
-    ...linksGalery,
-    ...secondSentence,
-    ...sentence
+    about,
+    experience,
+    header,
+    linksGalery,
+    secondSentence,
+    sentence
   }
 }
