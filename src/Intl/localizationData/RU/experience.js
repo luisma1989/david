@@ -1,33 +1,33 @@
 export default {
   "title": "Mi experiencia",
-  "subtitle": "Desde que empezé a trabajar en el mundo de la hosteleria, lo he hecho en <span>grandes hoteles y restaurantes</span> tanto en <span>España como en Rusia</span>, y puedo decir que es una de mis pasiones en la vida.",
+  "subtitle": " (RUSO) Desde que empezé a trabajar en el mundo de la hosteleria, lo he hecho en <span>grandes hoteles y restaurantes</span> tanto en <span>España como en Rusia</span>, y puedo decir que es una de mis pasiones en la vida.",
   "jobs": [
     {
       "title": "La terraza del casino (Casino Madrid)",
       "subtitle": "Ayudante",
-      "text": "La Terraza del Casino, en uno de los mayores exponentes de la vanguardia gastronómica española. Una propuesta culinaria en la que se busca la originalidad, la creatividad más extrema, la transgresión y la sorpresa en un entorno, sin embargo, tremendamente clásico.",
+      "text": "Терраса Казино, в одном из величайших экспонатов испанского гастрономического авангарда. Кулинарное предложение, которое ищет оригинальность, самый экстремальный творческий потенциал, трансгрессию и неожиданность в среде, однако, чрезвычайно классически.",
       "time": "Actualidad",
       "class": "timeline__content--flipped",
       "id": "0"
     },
     {
-      "title": "Compañia globus",
-      "subtitle": "Chef ejecutivo",
+      "title": "Компания Globus",
+      "subtitle": "Главный шеф-повар",
       "text": "(2 restaurantes, sala de banquetes y catering)Calle Varobskaia 135,  Kirov, Kirov Oblast, 610000 Rusia. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)",
-      "time": "2016 - 2017",
+      "time": "Actualidad",
       "class": "",
       "id":"1"
     },
     {
-      "title": "Compañia SPk-Neon",
-      "subtitle": "Chef ejecutivo",
+      "title": "Компания SPk-Neon",
+      "subtitle": "Главный шеф-повар",
       "text": "(5 locales)Calle Lenina, 73, Kirov, Kirov Oblast, 610000 Rusia. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)",
       "time": "2015 - 2016",
       "class": "timeline__content--flipped",
       "id":"2"
     },
     {
-      "title": "Hotel Hilton kirov, Restaurante Karin.",
+      "title": "Отель Hilton Kirov, ресторан Karin.",
       "subtitle": "Su chef",
       "text": "Oktyabrsky Prospect 145,610017 Rusia. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)",
       "time": "2014 - 2015",
@@ -36,7 +36,7 @@ export default {
     },
     {
       "title": "Restaurante колессо (koleso)",
-      "subtitle": "Jefe de partida caliente",
+      "subtitle": "Горячий стартовый босс",
       "text": "Calle Spasskaya, 18, Kirov, Kirov Oblast, 610000 Rusia Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)",
       "time": "2013 - 2014",
       "class": "timeline__content--flipped",

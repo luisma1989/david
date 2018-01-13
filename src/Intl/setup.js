@@ -4,9 +4,9 @@ import { addLocaleData } from 'react-intl';
 import Intl from 'intl';
 import areIntlLocalesSupported from 'intl-locales-supported';
 
-import 'intl/locale-data/jsonp/en';
-import en from 'react-intl/locale-data/en';
-import enData from './localizationData/en';
+import 'intl/locale-data/jsonp/ru';
+import ru from 'react-intl/locale-data/ru';
+import ruData from './localizationData/ru';
 
 import 'intl/locale-data/jsonp/es';
 import es from 'react-intl/locale-data/es';
@@ -15,7 +15,7 @@ import esData from './localizationData/es';
 // list of available languages
 export const enabledLanguages = [
   'es',
-  'en',
+  'ru',
 ];
 
 // this object will have language-specific data added to it which will be placed in the state when that language is active
@@ -40,9 +40,8 @@ if (global.Intl) {
   // No `Intl`, so use and load the polyfill.
   global.Intl = Intl;
 }
-
 addLocaleData(es);
 localizationData.es = esData;
 
-addLocaleData(en);
-localizationData.en = enData;
+addLocaleData(ru);
+localizationData.ru = ruData;
