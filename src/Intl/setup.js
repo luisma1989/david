@@ -40,6 +40,7 @@ if (global.Intl) {
   // No `Intl`, so use and load the polyfill.
   global.Intl = Intl;
 }
+
 addLocaleData(es);
 localizationData.es = esData;
 
