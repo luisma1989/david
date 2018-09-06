@@ -1,0 +1,36 @@
+/*
+Application Settings Go Here
+------------------------------------
+This file acts as a bundler for all variables/mixins/themes, so they
+can easily be swapped out without `core.scss` ever having to know.
+
+For example:
+
+@import './variables/colors';
+@import './variables/components';
+@import './themes/default';
+*/
+.h1-navy {
+  font-size: 50px; }
+
+.countries {
+  display: flex;
+  min-height: 700px; }
+  .countries img {
+    min-width: 700px;
+    height: 500px;
+    position: relative;
+    left: 0; }
+  .countries .text-section {
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5c636e;
+    padding: 100px 150px;
+    position: relative;
+    right: 0;
+    top: 50px; }
+    .countries .text-section article {
+      color: white;
+      flex: 0 0 40%; }

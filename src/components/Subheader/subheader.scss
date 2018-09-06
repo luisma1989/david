@@ -1,0 +1,20 @@
+.subheader {
+  min-height: 920px;
+  .container {
+    display: flex;
+  }
+  .testimony {
+    height: 400px;
+    width: 70%;
+    h2 {
+      font-size: 70px;
+    }
+  }
+  .image-subheader {
+    margin: 50px;
+    img {
+      width: 500px;
+      height: auto;
+    }
+  }
+}

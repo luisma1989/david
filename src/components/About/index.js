@@ -29,7 +29,7 @@ class About extends React.Component {
 }
 
 About.propTypes = {
-    aboutData: PropTypes.object.isRequired
+  aboutData: PropTypes.object.isRequired
 }
 
 export default About

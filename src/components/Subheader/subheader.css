@@ -1,0 +1,14 @@
+.subheader {
+  min-height: 920px; }
+  .subheader .container {
+    display: flex; }
+  .subheader .testimony {
+    height: 400px;
+    width: 70%; }
+    .subheader .testimony h2 {
+      font-size: 70px; }
+  .subheader .image-subheader {
+    margin: 50px; }
+    .subheader .image-subheader img {
+      width: 500px;
+      height: auto; }

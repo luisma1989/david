@@ -4,9 +4,8 @@ import $ from 'jquery'
 import WOW from 'wowjs'
 import {connect} from 'react-redux'
 import ChangeLanguage from '../ChangeLanguage'//'../components/ChangeLanguage'
-
-import { switchLanguage } from '../../Intl/IntlActions';
-
+import { Parallax } from 'react-scroll-parallax'
+import { switchLanguage } from '../../Intl/IntlActions'
 
 import './Header.css'
 
@@ -34,18 +33,18 @@ class Header extends React.Component {
 
     return (
       <article className='header parallax'>
-        <ChangeLanguage
-        switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-        intl={this.props.intl}/>
-        <div className='container home-container'>
-          <div className='home_text wow bounceIn'>
-            <h1 className='wow rubberBand title'>
-              <span>{headerData.name}</span>
-              <br/>
-              {headerData.apellidos}
-            </h1>
+        <ChangeLanguage switchLanguage={lang => this.props.dispatch(switchLanguage(lang))} intl={this.props.intl} />
+        <Parallax className='custom-class' offsetYMax={40} offsetYMin={-80} slowerScrollRate tag='figure'>
+          <div className='container home-container'>
+            <div className='home_text wow bounceIn'>
+              <h1 className='wow rubberBand title'>
+                <span>{headerData.name}</span>
+                <br />
+                {headerData.apellidos}
+              </h1>
+            </div>
           </div>
-        </div>
+        </Parallax>
       </article>
     )
   }

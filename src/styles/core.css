@@ -10,6 +10,9 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+.h1-navy {
+  font-size: 50px; }
+
 * {
   margin: 0;
   padding: 0; }
